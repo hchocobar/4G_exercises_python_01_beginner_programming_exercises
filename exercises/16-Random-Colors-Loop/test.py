@@ -14,21 +14,22 @@ def test_get_color_exists(capsys, app):
         app.get_color
     except AttributeError:
         raise AttributeError("The function 'get_color' should exist on app.py")
-@pytest.mark.it('Function get_allStudentColors should exist')
-def test_get_allStudentColors_exists(capsys, app):
-    try:
-        app.get_allStudentColors
-    except AttributeError:
-        raise AttributeError("The function 'get_allStudentColors' should exist on app.py")
 
-@pytest.mark.it('Function get_allStudentColors should return ten colors')
+@pytest.mark.it('Function get_all_student_colors should exist')
+def test_get_all_student_colors_exists(capsys, app):
+    try:
+        app.get_all_student_colors
+    except AttributeError:
+        raise AttributeError("The function 'get_all_student_colors' should exist on app.py")
+
+@pytest.mark.it('Function get_all_student_colors should return ten colors')
 def test_ten_colors(capsys, app):
-    result = app.get_allStudentColors()
+    result = app.get_all_student_colors()
     assert len(result) == 10
 
-@pytest.mark.it("Function get_allStudentColors shouldn't return an array with the black color")
+@pytest.mark.it("Function get_all_student_colors shouldn't return an array with the black color")
 def test_black_in_array(capsys, app):
-    result = app.get_allStudentColors()
+    result = app.get_all_student_colors()
     assert result.count("black") == 0
 
 @pytest.mark.it('You should use for to iterate 10 times')

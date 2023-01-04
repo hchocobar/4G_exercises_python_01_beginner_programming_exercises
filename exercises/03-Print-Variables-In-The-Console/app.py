@@ -1,1 +1,3 @@
-#your code here
+# Your code here
+color = 'red'
+print(color)
